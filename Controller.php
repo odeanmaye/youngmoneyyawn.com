@@ -1,6 +1,7 @@
 <?php
 include_once "View.php";
 include_once "Models/Video.php";
+include_once "Models/Image.php";
 
 class Controller {
 	
@@ -11,8 +12,14 @@ class Controller {
 	}
 	
 	public function index(){
+		//Get videos from youtube
 		$video = new Video();
 		$this->view->videos = $video->youtube();
+		
+		//Get videos from instagram
+		$image = new Image();
+		$this->view->images = $image->instagram();//print_r($this->view->images);die;
+		
 		$this->view->render("index");
 	}
 	
