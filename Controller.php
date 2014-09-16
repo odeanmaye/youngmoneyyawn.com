@@ -18,7 +18,7 @@ class Controller {
 		
 		//Get videos from instagram
 		$image = new Image();
-		$this->view->images = $image->instagram();//print_r($this->view->images);die;
+		$this->view->images = $image->instagram();
 		
 		$this->view->render("index");
 	}
