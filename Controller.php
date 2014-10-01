@@ -12,6 +12,10 @@ class Controller {
 	}
 	
 	public function index(){
+		$this->view->render("index");
+	}
+	
+	public function media(){
 		//Get videos from youtube
 		$video = new Video();
 		$this->view->videos = $video->youtube();
@@ -20,7 +24,17 @@ class Controller {
 		$image = new Image();
 		$this->view->images = $image->instagram();
 		
-		$this->view->render("index");
+		$this->view->render("media");
+	}
+	
+	public function music()
+	{
+		$this->view->render("music");
+	}
+	
+	public function bio()
+	{
+		$this->view->render("bio");
 	}
 	
 }

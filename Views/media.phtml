@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<?php $this->getHead(); ?>
+
+	<body>
+		<?php $this->getHelper("header"); ?>
+			
+		<!-- Video Section -->
+		<section class="small-padding" id="video">
+			<div class="wrapper">
+				<h3 class="floatleft">Videos<small class="video-filter"></small></h3>
+				<div class="clear"></div><!--CLEAR FLOATS-->
+			</div>
+		</section>
+		<section class="dark-wrapper">
+			<div class="wrapper overflow-hidden">
+			<div id="loader"></div>
+				<ul class="clearfix video-isotope video scroll-animate bottom">
+				    <?php foreach($this->videos->data as $video){?>		
+					<li  class="web-design illustration">
+						<a href="javascript:showVideoModal('<?= $video->caption;?>','<?= $video->std_res;?>')" class="isotope-alt-image">
+							<img src=<?= $video->thumbnail?> alt="image" />
+							<div>
+								<h5><?= $video->description?></h5>
+							</div>
+						</a>
+						<div class="isotope-alt-details">
+							<div>
+								<h4 class="remove-bottom"><?= $video->caption?></h4>
+							</div>
+						</div>
+					</li>
+					<?php }?>
+				</ul>
+				<a href="#" id="load-more" class="scroll-animate top">More Videos</a>
+			</div>
+		</section>
+		
+	    <!-- Picture Section -->
+		<section class="small-padding" id="pics">
+			<div class="wrapper">
+				<h3 class="floatleft">Pics<small></small></h3>
+				<div class="clear"></div><!--CLEAR FLOATS-->
+			</div>
+		</section>
+		
+		<section class="dark-wrapper">
+			<div class="wrapper">
+	            <div class="container">
+	    <div class="row">
+			<div class="col-md-12">
+	                <div id="Carousel" class="carousel slide">
+	                 
+	                <ol class="carousel-indicators">
+	                    <li data-target="#Carousel" data-slide-to="0" class="active"></li>
+	                    <li data-target="#Carousel" data-slide-to="1"></li>
+	                    <li data-target="#Carousel" data-slide-to="2"></li>
+	                </ol>
+	                 
+	                <!-- Carousel items -->
+	                <div class="carousel-inner">
+	                	<div class="item active">
+							<div class="row">
+	                
+	                	<?php
+	                		$count = 1;
+	                		$length = count($this->images->data); 
+	                		foreach($this->images->data as $image){
+						 ?>
+								<div class="col-md-3">
+									<a href="javascript:showImageModal('<?= $image->std_res; ?>')" class="thumbnail">
+									<img src="<?= $image->thumbnail ?>" alt="Image" style="max-width:100%;">
+									</a>
+								</div>
+						<?php	if($count%4 == 0 && $count != length){ ?>
+										
+										</div><!--.row-->
+								    </div><!--.item-->
+									<div class="item">
+										<div class="row">
+						<?php
+								}
+								$count++;
+							} 
+	                	?>
+	                		</div><!--.row-->
+						</div><!--.item-->
+	                </div><!--.carousel-inner-->
+	                  <a data-slide="prev" href="#Carousel" class="left carousel-control">‹</a>
+	                  <a data-slide="next" href="#Carousel" class="right carousel-control">›</a>
+	                </div><!--.Carousel-->
+	 
+			        </div>
+		        </div>
+	         </div><!--.container-->
+		        <div class="clear"></div>
+	       </div>
+		</section>
+		
+		<?php $this->getHelper("footer");?>
+		
+		<!--LOAD SCRIPTS-->
+		<script src="js/jquery-1.11.0.js"></script>
+		<script type="text/javascript" src="js/jquery.modal.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/plugins.js"></script>
+		<script type="text/javascript" src="js/custom.js"></script>
+		<script type="text/javascript" src="js/style.js"></script>
+		<script type="text/javascript" src="js/video.js"></script>
+		<script type="text/javascript" src="js/show-modals.js"></script>
+	
+	    <?php $this->getHelper("video_modal");?>    
+	    <?php $this->getHelper("image_modal");?>
+	    <?php $this->getHelper("contact_modal");?>
+	    
+	</body>
+</html>

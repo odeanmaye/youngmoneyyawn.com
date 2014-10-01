@@ -1,0 +1,37 @@
+<?php
+echo <<<EOT
+	<header>
+		<div class="wrapper clearfix">
+			<div class="one_fourth remove_bottom logo">
+				<a href="/">
+					<img src="img/logo.png" alt="logo" id ="logoHead" class="retina" />
+				</a>
+			</div><!--/one_fourth-->
+			<div class="three_fourths remove_bottom last">
+				<nav>
+					<ul id="selectnav">
+						<li>
+							<a href="?page=bio" class="scroller">Bio</a>
+						</li>
+						<li>
+							<a href="?page=media" class="scroller">Videos</a>
+						</li>
+						<li>
+							<a href="?page=media#pics" class="scroller">Pics</a>
+						</li>
+						<li>
+							<a href="?page=music" class="scroller">Music</a>
+						</li>
+						<li>
+							<a href="javascript:showContactModal()" class="scroller">Team Yawn</a>
+						</li>
+						<li>
+							<a href="javascript:showImageModal('img/comingSoon.jpg')" class="scroller">Merchandise</a>
+						</li>
+					</ul>
+				</nav>
+			</div><!--/three_fourths-->
+		</div><!--/wrapper-->
+	</header><!--/header-->
+EOT;
+?>

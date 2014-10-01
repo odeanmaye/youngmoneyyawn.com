@@ -1,0 +1,80 @@
+<?php
+echo <<<EOT
+    <!-- Contact Modal -->
+    <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true" style="color:#333">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="contactModalLabel"><strong>Join Team Yawn</strong></h4>
+                        </div>
+                        <div class="modal-body">
+                        <form  action="/formsub" method="POST">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1"><strong>First Name</strong></label>
+                            <input type="text" name="first_name" class="form-control" id="first_name" placeholder="First Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1"><strong>Last Name</strong></label>
+                            <input type="text" name="last_name" class="form-control" id="last_name" placeholder="Last Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1"><strong>Email</strong></label>
+                            <input type="email" name="email" class="form-control" id="email" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1"><strong>Phone Number</strong></label>
+                            <input type="number" name="phone_number" class="form-control" id="phone_number" placeholder="Number">
+                        </div>
+                        <div class="form-group">
+                        <label for="exampleInputEmail1"><strong>Carrier</strong></label>
+                        <select name="phone_carrier" class="form-control" id="phone_carrier">
+                            <option>Please Select</option>
+                            <option>Verizon</option>
+                            <option>Sprint</option>
+                            <option>T-Mobile</option>
+                            <option>AT&T</option>
+                            <option>Other</option>
+                        </select>
+                        </div>
+                        <div class="form-group">
+                        <label for="exampleInputEmail1"><strong>Instagram Handle</strong></label>
+                        <div class="input-group">
+                            <span class="input-group-addon">@</span>
+                            <input type="text" name="ig_handle" class="form-control" id="ig_handle" placeholder="Instagram Handle" >
+                        </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1"><strong>Twitter Handle</strong></label>
+                            <div class="input-group">
+                                <span class="input-group-addon">@</span>
+                                <input type="text" name="tw_handle" class="form-control"   id="tw_handle" placeholder="Twitter Handle">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1"><strong>Facebook Username or Email Address</strong></label>
+                            <input type="text" name="fb_handle" class="form-control" id="fb_handle" placeholder="Facebook Username or Email Address">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1"><strong>Perfered Contact Method</strong></label><br/>
+                            <label class="radio-inline";font-weight:bold;">
+                            <input style ="width: 5%" type="radio" name="preferred" id="perferedmethod radioStyle" value="SMS">&nbsp;<strong>Text Message</strong> 
+                            </label>
+                        <label class="radio-inline";font-weight:bold;">
+                            <input style ="width: 5%" type="radio" name="preferred" id="perferedmethod1 radioStyle" value="Email">&nbsp;<strong>Email</strong>
+                        </label>
+
+                        <input type="hidden" name="returnplease" class="form-control" id="returnplease" placeholder="" value="{{Request::path()}}">
+
+                        </div>
+                        <div id ="center"class="modal-footer">
+                            <br />
+                            <input type="submit" class="btn btn-default" value="Submit">
+                        </div>
+                    </form>
+                    </div>
+                 </div>
+            </div>
+        </div>
+EOT;
+?>

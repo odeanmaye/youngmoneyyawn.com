@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<?php $this->getHead(); ?>
+	
+	<body>
+		<?php $this->getHelper("header"); ?>
+		
+	    <!-- Mixtapes Section -->
+		<section id="mixtapes" class="small-padding" >
+			<div  class="wrapper">
+				<h3 class="floatleft">Music<small></small></h3>
+				<div class="clear"></div><!--CLEAR FLOATS-->
+			</div>
+		</section>
+		
+		<section class="dark-wrapper">
+			<div class="wrapper">
+				<ul class="clearfix video-isotope">		
+					<li class="scroll-animate bottom">
+						<a href="javascript:showMixtapeModal('Street Gospel','http://www.audiomack.com/embed3-album/young-money-yawn/street-gospel?c1=fc881e&bg=f2f2f2&c2=222222')" class="isotope-alt-image">
+							<img src="img/streetgospel.jpg" alt="image" />
+							<div>
+								<h4>Street Gospel<small>"Young Money Yawn brings you the highly anticipated street gospel mix tape Hosted by DJ SWU Sponsored by Playcloths"</small></h4>
+							</div>
+						</a>
+						<div class="isotope-alt-details">
+							<div>
+								<h4 class="remove-bottom">Street Gospel</h4>
+							</div>
+						</div>
+					</li>
+					<li class="scroll-animate bottom">
+						<a href="javascript:showMixtapeModal('Lost Scriptures','http://www.audiomack.com/embed3-album/young-money-yawn/lost-scriptures-1?c1=fc881e&bg=f2f2f2&c2=222222')" class="isotope-alt-image">
+							<img src="img/lostscriptures.jpg" alt="image" />
+							<div>
+								<h4>Lost Scriptures<small>"Pusha T's protege displays his gift of conveying street tales through a nimble flow over a range of soulful and trap beats"</small></h4>
+							</div>
+						</a>
+						<div class="isotope-alt-details">
+							<div>
+								<h4 class="remove-bottom">Lost Scriptures</h4>
+							</div>
+						</div>
+					</li>
+					<li class="scroll-animate right">
+						<a href="#" class="isotope-alt-image">
+							<img src="img/team3.jpg" alt="image" />
+							<div>
+								<h4>Mixtape title<small>"Mixtape info"</small></h4>
+							</div>
+						</a>
+						<div class="isotope-alt-details">
+							<div>
+								<h4 class="remove-bottom">Mixtape title</h4>
+								<p class="meta">Mixtape releasedate</p>
+							</div>
+						</div>
+					</li>
+				</ul>	
+			</div>	
+		</section>
+		
+		<?php $this->getHelper("footer");?>
+		
+		<!--LOAD SCRIPTS-->
+		<script src="js/jquery-1.11.0.js"></script>
+		<script type="text/javascript" src="js/jquery.modal.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/plugins.js"></script>
+		<script type="text/javascript" src="js/custom.js"></script>
+		<script type="text/javascript" src="js/style.js"></script>
+		<script type="text/javascript" src="js/video.js"></script>
+		<script type="text/javascript" src="js/show-modals.js"></script>
+	        
+	    <?php $this->getHelper("mixtape_modal");?>    
+	    <?php $this->getHelper("image_modal");?>
+	    <?php $this->getHelper("contact_modal");?>
+	</body>
+</html>
